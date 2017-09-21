@@ -1,7 +1,47 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: #46CCC5;
+	color: #FFFFFF;
 }
 a {
-  color: #00b7ff;
+	color: #00b7ff;
+}
+.logo {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.formInput {
+	width: 320px;
+	background-color: #19ACA2;
+	border: none;
+	padding: 10px;
+	margin-bottom: 10px;
+	color: #FFFFFF;
+}
+.login {
+	width: 340px;
+	background-color: #46CCC5;
+	border: 0.5px solid #FFFFFF;
+	padding: 10px;
+	margin-bottom: 10px;
+	color: #FFFFFF;
+}
+.lupaPassword {
+	margin-left: 240px;
+}
+.loginButton {
+	width: 320px;
+	background-color: #19ACA2;
+	border: none;
+	padding: 10px;
+	margin-bottom: 10px;
+	color: #FFFFFF;
+}
+.keterangan {
+	font-size: 12px;
+}
+hr {
+	width: 320px;
+	border: 1px solid #FFFFFF;
 }

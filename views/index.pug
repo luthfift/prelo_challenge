@@ -1,5 +1,24 @@
 extends layout
 
 block content
-  h1= Login
-  p Ini buat Login
+	center
+		img.logo(src = "images/logo.png")
+		br
+		form(action = "/" method = "POST")
+			input.formInput(name = "username_or_email" type = "text" required placeholder = "Email atau Username")
+			br
+			input.formInput(name = "password" type = "password" required placeholder = "Password")
+			br
+			button.login(type = "Submit") Log in
+		div.lupaPassword(onClick = "alert('under development')") Lupa password?
+		br
+		br
+		div.loginButton(onClick = "alert('under development')") Log In dengan Facebook
+		div.loginButton(onClick = "alert('under development')") Log In dengan Twitter
+		p.keterangan Prelo tidak akan post apapun tanpa persetujuan kamu
+		hr
+		br
+		p Belum punya ID Prelo? 
+			b Daftar Sekarang
+
+
