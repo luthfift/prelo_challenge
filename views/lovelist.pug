@@ -1,5 +1,25 @@
 extends layout
 
 block content
-  h1= Lovelist
-  p Ini buat #{title} tokennya #{token}
+	center
+		div.header
+			img.logoLovelist(src = "/images/logo.png")
+		div.title
+			p LOVELIST
+			hr
+		for item in data
+			div.content
+				div.image
+					img.display(src= item.display_picts[0])
+				div.productName= item.name
+				div.price= "Rp."+item.price
+				div.comment
+					span.totalComment= item.num_comment
+				div.love
+					span.totalLove= item.num_lovelist
+		div.footer
+			button.loadMore(type = "submit") Load More
+
+
+
+

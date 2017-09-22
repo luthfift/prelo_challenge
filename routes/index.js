@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
   	json: true
   }, function(error,response,body){
   	if (!error && response.statusCode == 200){
-  		res.redirect('/lovelist/'+body._data.token);
+  		res.redirect('/lovelist/'+body._data.token+'/1');
   	}else{ 
       res.status(400);
       res.json({message: "Bad Request"});
@@ -29,11 +29,28 @@ router.post('/', function(req, res, next) {
 
 /* GET lovelist page. */
 router.get('/lovelist/', function(req, res, next) {
-  res.render('lovelist', { title: 'Lovelist' });
+  res.redirect('/');
 });
 
-router.get('/lovelist/(:token)', function(req, res, next) {
-  res.render('lovelist', { title: 'Lovelist', token: req.params.token });
+router.get('/lovelist/(:token)/(:page)', function(req, res, next) {
+  request({
+    method: 'get',
+    url: "https://dev.prelo.id/api/me/lovelist/"+req.params.page,
+    headers: {
+      Authorization: "Token " + req.params.token
+    },
+    json: true
+  }, function(error,response,body){
+    if (!error && response.statusCode == 200){
+      res.render('lovelist', { 
+        title: 'Lovelist', 
+        data: body._data
+      });
+    }else{ 
+      res.status(400);
+      res.json({message: "Bad Request"});
+    }
+  })
 });
 
 module.exports = router;
