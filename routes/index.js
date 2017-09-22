@@ -20,9 +20,10 @@ router.post('/', function(req, res, next) {
   }, function(error,response,body){
   	if (!error && response.statusCode == 200){
   		res.redirect('/lovelist/'+body._data.token);
-  	}else
-  		res.status(400);
-      	res.json({message: "Bad Request"});
+  	}else{ 
+      res.status(400);
+      res.json({message: "Bad Request"});
+    }
   })
 });
 

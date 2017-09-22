@@ -3,22 +3,29 @@ extends layout
 block content
 	center
 		img.logo(src = "images/logo.png")
-		br
-		form(action = "/" method = "POST")
+		form(name = "login" action = "/" method = "POST")
 			input.formInput(name = "username_or_email" type = "text" required placeholder = "Email atau Username")
 			br
 			input.formInput(name = "password" type = "password" required placeholder = "Password")
 			br
-			button.login(type = "Submit") Log in
+			button.login(type = "button" onclick = "validate()") Log in
 		div.lupaPassword(onClick = "alert('under development')") Lupa password?
-		br
-		br
 		div.loginButton(onClick = "alert('under development')") Log In dengan Facebook
 		div.loginButton(onClick = "alert('under development')") Log In dengan Twitter
 		p.keterangan Prelo tidak akan post apapun tanpa persetujuan kamu
 		hr
-		br
 		p Belum punya ID Prelo? 
 			b Daftar Sekarang
+
+	script.
+		function validate() {
+		  if (document.login.username_or_email.value.length < 4) {
+		    alert("‘Email atau Username’ tidak boleh kosong dan minimal 4 karakter");
+		  } else if (document.login.password.value.length < 6) {
+		    alert("‘Password’ minimal 6 karakter");
+		  } else {
+		    document.login.submit();
+		  }
+		}
 
 
