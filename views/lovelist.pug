@@ -5,20 +5,22 @@ block content
 		div.header
 			img.logoLovelist(src = "/images/logo.png")
 		div.title
-			p LOVELIST
-			hr
+			p(style="border-bottom: 1px solid #ddd") LOVELIST
 		for item in data
 			div.content
 				div.image
 					img.display(src= item.display_picts[0])
 				div.productName= item.name
 				div.price= "Rp."+item.price
+				br(style="margin-top:14px")
 				div.comment
 					span.totalComment= item.num_comment
 				div.love
 					span.totalLove= item.num_lovelist
 		div.footer
-			button.loadMore(type = "submit") Load More
+			button.loadMore(type = "button" onClick = "loadMore()") Load More
+
+	script(src='/js/lovelist.js')
 
 
 

@@ -3,7 +3,7 @@ extends layout
 block content
 	center
 		img.logo(src = "images/logo.png")
-		form(name = "login" action = "/" method = "POST")
+		form(name = "login" action = "#" method = "POST")
 			input.formInput(name = "username_or_email" type = "text" required placeholder = "Email atau Username")
 			br
 			input.formInput(name = "password" type = "password" required placeholder = "Password")
@@ -17,15 +17,7 @@ block content
 		p Belum punya ID Prelo? 
 			b Daftar Sekarang
 
-	script.
-		function validate() {
-		  if (document.login.username_or_email.value.length < 4) {
-		    alert("‘Email atau Username’ tidak boleh kosong dan minimal 4 karakter");
-		  } else if (document.login.password.value.length < 6) {
-		    alert("‘Password’ minimal 6 karakter");
-		  } else {
-		    document.login.submit();
-		  }
-		}
+	script(src='js/login.js')
+
 
 
