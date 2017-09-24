@@ -34,3 +34,7 @@ function validate() {
 		xhr.send(data);
 		}
 };
+
+function coba() {
+	alert(title + "hai");
+}

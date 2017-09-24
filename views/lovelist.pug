@@ -1,23 +1,34 @@
 extends layout
 
 block content
-	center
-		div.header
-			img.logoLovelist(src = "/images/logo.png")
-		div.title
-			p(style="border-bottom: 1px solid #ddd") LOVELIST
-		for item in data
-			div.content
-				div.image
-					img.display(src= item.display_picts[0])
-				div.productName= item.name
-				div.price= "Rp."+item.price
-				br(style="margin-top:14px")
-				div.comment
-					span.totalComment= item.num_comment
-				div.love
-					span.totalLove= item.num_lovelist
-		div.footer
+	
+	link(rel='stylesheet', href='/stylesheets/lovelist.css')
+	nav.navbar.navbar-default.navbar-fixed-top
+		div.navbar-header
+			a.fa.fa-bars.fa-2x(href="#")
+			a.navbar-brand(href="#")
+				img.nav-logo.center-block(src="/images/logo.png")
+		div.navbar-right
+			a.fa.fa-search.fa-2x(href="#")
+			a.fa.fa-shopping-cart.fa-2x(href="#")
+	div.col-md-6.col-md-offset-3
+		div.loveList-header
+			div.loveList-title
+				h3 LOVELIST
+		div.loveList-body
+			for item in data
+				div.panel
+					div.panel-body
+						div.media
+							div.media-left
+								img.media-object(src=item.display_picts[0])
+							div.media-body
+								p.media-heading= item.name
+								p.price= "Rp."+item.price
+								div.comment
+									span.fa.fa-comment-o= item.num_comment
+									span.fa.fa-heart-o= item.num_lovelist
+		div.loveList-footer
 			button.loadMore(type = "button" onClick = "loadMore()") Load More
 
 	script(src='/js/lovelist.js')

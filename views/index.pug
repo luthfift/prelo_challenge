@@ -1,21 +1,29 @@
 extends layout
 
 block content
-	center
-		img.logo(src = "images/logo.png")
-		form(name = "login" action = "#" method = "POST")
-			input.formInput(name = "username_or_email" type = "text" required placeholder = "Email atau Username")
-			br
-			input.formInput(name = "password" type = "password" required placeholder = "Password")
-			br
-			button.login(type = "button" onclick = "validate()") Log in
-		div.lupaPassword(onClick = "alert('under development')") Lupa password?
-		div.loginButton(onClick = "alert('under development')") Log In dengan Facebook
-		div.loginButton(onClick = "alert('under development')") Log In dengan Twitter
+	div.col-md-6.col-md-offset-3
+		div.logo
+			img.center-block(src = "images/logo.png")
+		div.form-group
+			form(name = "login" action = "#" method = "POST")
+				div.formInput
+					input.form-control(name = "username_or_email" type = "text" required placeholder = "Email atau Username")
+				div.formInput
+					input.form-control(name = "password" type = "password" required placeholder = "Password")
+				div.formInput
+					button.login(type = "button" onclick = "validate()") Log in
+				div.lupaPassword(onClick = "alert('under development')") Lupa password?
+		button.loginButton(onClick = "alert('under development')") 
+			i.fa.fa-facebook
+			span  Log In dengan Facebook	
+		div.loginButton(onClick = "coba()")
+			i.fa.fa-twitter
+			span  Log In dengan Twitter
 		p.keterangan Prelo tidak akan post apapun tanpa persetujuan kamu
-		hr
-		p Belum punya ID Prelo? 
-			b Daftar Sekarang
+		br
+		center
+			p Belum punya ID Prelo? 
+				b Daftar Sekarang
 
 	script(src='js/login.js')
 
