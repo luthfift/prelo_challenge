@@ -18,7 +18,8 @@ function validate() {
 		    else if (xhr.readyState === 4) {
 		        if (xhr.status == 200 && xhr.status < 300) {
 		        	var json = JSON.parse(xhr.responseText);
-		        	window.location = "/lovelist/"+json._data.token+"/1";
+		        	localStorage.setItem('Token',json._data.token);
+		        	window.location = "/lovelist/";
 		        }else{
 		        	alert('An error occurred during your request: ' +  xhr.status + ' ' + xhr.statusText);
 		        }

@@ -65,6 +65,10 @@ a:focus {
   margin-right: 10px;
   color: #ddd;
 }
+.loading {
+  text-align: center;
+  padding: 10px;
+}
 .loveList-footer {
   padding: 30px;
   text-align: center;

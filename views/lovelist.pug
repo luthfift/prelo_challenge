@@ -15,19 +15,9 @@ block content
 		div.loveList-header
 			div.loveList-title
 				h3 LOVELIST
-		div.loveList-body#tambah
-				for item in data
-					div.panel
-						div.panel-body
-							div.media
-								div.media-left
-									img.media-object(src=item.display_picts[0])
-								div.media-body
-									p.media-heading= item.name
-									p.price= "Rp."+item.price
-									div.comment
-										span.fa.fa-comment-o= item.num_comment
-										span.fa.fa-heart-o= item.num_lovelist
+		div.loveList-body#add
+		div.loading#load
+				i.fa.fa-spinner.fa-spin.fa-2x 
 		div.loveList-footer
 			button.loadMore(type = "button" onClick = "loadMore()") Load More
 
